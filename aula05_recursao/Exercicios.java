@@ -4,9 +4,14 @@ import utils.ArrayUtils;
 
 public class Exercicios {
 
-    public static int maiorValor(int[] a, int i, int maiorValor) {
+    public static int maiorValor(int[] a, int i, int maior) {
         //fazer
-        return 0;
+        int tamanho = a.length;
+        if(i < tamanho) {
+            if(a[i] > maior) maior = a[i];
+            maiorValor(a, i + 1, maior);
+        }
+        return maior;
     }
     public static int maiorValorNaoRecursivo(int[] a) {
         int maiorValor = Integer.MIN_VALUE;
@@ -52,6 +57,9 @@ public class Exercicios {
         ArrayUtils.imprimir(b);
         inverter(b);
         ArrayUtils.imprimir(b);
+
+        int x = maiorValor(b, 0, Integer.MIN_VALUE);
+        System.out.println(x);
 
         /*
         int s = somatorio(4);
