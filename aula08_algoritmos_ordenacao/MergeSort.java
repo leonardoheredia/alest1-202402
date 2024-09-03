@@ -1,30 +1,69 @@
 package aula08_algoritmos_ordenacao;
 
-import utils.ArrayUtils;
-
 public class MergeSort {
-
-    public void ordenar(int[] a) {
-        mergeSort(a, 0, a.length-1);
-    }
-    public void mergeSort(int[] a, int i, int f) {
-        if(i < f) {
-            int m = (i + f) / 2;
-            mergeSort(a, i, m);
-            merge(a, i, m, f);
-        }
-    }
-    public void merge(int[] a, int i, int m, int f) {
-        int[] helper = new int[a.length];
-        for (int j = i; j <= f; j++) {
-            helper[j] = a[j];
-        }
-        ArrayUtils.imprimir(helper);
+    private int[] numbers;
+    private int[] helper;
+    private int number;
+    private long operacoes;
+    private long tempoInicio;
+    private long tempoFim;
+    public long getTempoExecucao() {
+        long tempoExecucao = (tempoFim - tempoInicio) / 1_000  ;
+        return tempoExecucao;
     }
 
-    public static void main(String[] args) {
-        int a[] = {10, 20, 30, 40, 50};
-        MergeSort ms = new MergeSort();
-        ms.ordenar(a);
+    public long getOperacoes() {
+        return operacoes;
+    }
+
+    public void ordenar(int[] values) {
+        tempoInicio = System.nanoTime();
+
+        operacoes = 0;
+        this.numbers = values;
+        number = values.length;
+        this.helper = new int[number];
+
+        mergeSort(0, number - 1);
+
+        tempoFim = System.nanoTime();
+
+    }
+    private void mergeSort(int low, int high) {
+        operacoes++;
+        if (low < high) {
+            int middle = (low + high) / 2;
+            mergeSort(low, middle);
+            mergeSort(middle + 1, high);
+            merge(low, middle, high);
+        }
+    }
+    private void merge(int low, int middle, int high) {
+        for (int i = low; i <= high; i++) {
+            helper[i] = numbers[i];
+            operacoes++;
+        }
+
+        int i = low;
+        int j = middle + 1;
+        int k = low;
+
+        while (i <= middle && j <= high) {
+            if (helper[i] <= helper[j]) {
+                numbers[k] = helper[i];
+                i++;
+            } else {
+                numbers[k] = helper[j];
+                j++;
+            }
+            operacoes++;
+            k++;
+        }
+        while (i <= middle) {
+            numbers[k] = helper[i];
+            k++;
+            i++;
+            operacoes++;
+        }
     }
 }

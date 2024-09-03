@@ -1,16 +1,15 @@
 package aula08_algoritmos_ordenacao;
 
 public class BubbleSort {
-    private int operacoes;
+    private long operacoes;
     private long tempoInicio;
     private long tempoFim;
-
-    public int getOperacoes() {
+    public long getOperacoes() {
         return operacoes;
     }
 
     public long getTempoExecucao() {
-        long tempoExecucao = (tempoFim - tempoInicio) / 1_000_000;
+        long tempoExecucao = (tempoFim - tempoInicio)  ;
         return tempoExecucao;
     }
 
@@ -20,7 +19,7 @@ public class BubbleSort {
         int tamanho = arrayInteiros.length;
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < tamanho - i - 1; j++) {
-                if (arrayInteiros[j] > arrayInteiros[j + 1]) {
+                if(arrayInteiros[j]>arrayInteiros[j + 1]) {
                     int temp = arrayInteiros[j];
                     arrayInteiros[j] = arrayInteiros[j + 1];
                     arrayInteiros[j + 1] = temp;
@@ -31,4 +30,5 @@ public class BubbleSort {
         }
         tempoFim = System.nanoTime();
     }
+
 }

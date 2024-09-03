@@ -12,8 +12,8 @@ public class AnaliseAlgoritmosOrdenacao {
         int[] meuArray;
         int[] meuArrayBubble;
 
-        System.out.println("n;bubble");
-        for (int n = LIMITE_INFERIOR; n <= LIMITE_SUPERIOR; n += INCREMENTO) {
+        System.out.println("n;algorimot");
+        for (int n = 5; n <= 100; n += 1) {
             meuArray = new int[n];
             meuArrayBubble = new int[n];
 
@@ -23,10 +23,22 @@ public class AnaliseAlgoritmosOrdenacao {
 
             BubbleSort bs = new BubbleSort();
             bs.ordenar(meuArrayBubble);
-
+            //InsertionSort is = new InsertionSort();
+            //is.ordenar(meuArray);
 
             System.out.println(n + ";" + bs.getOperacoes());
 
+
+
+
+            /*
+            ArrayUtils.clonarArray(meuArray, meuArrayBubble);
+
+            BubbleSort bs = new BubbleSort();
+            bs.ordenar(meuArrayBubble);
+
+
+*/
         }
     }
 }
