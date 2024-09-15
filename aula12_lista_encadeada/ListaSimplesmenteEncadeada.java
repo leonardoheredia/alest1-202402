@@ -101,7 +101,7 @@ public class ListaSimplesmenteEncadeada {
         }
         else {
             Nodo anterior = inicio;
-            for(int p=1; p<posicao; p++) {
+            for(int p=0; p<posicao; p++) {
                 anterior = anterior.proximo;
             }
             //termina o laco com o anterior sendo o anterior do novo nodo
