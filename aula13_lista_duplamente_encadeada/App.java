@@ -11,6 +11,8 @@ public class App {
 
         times.limpar();
         times.adicionar(0, "internacional");
+        System.out.println(times);
+
         times.adicionar(0, "gremio");
         times.adicionar(0, "juventude");
         times.adicionar(0, "caxias");

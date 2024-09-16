@@ -30,29 +30,16 @@ public class ListaDuplamenteEncadeada {
         }
 
         Nodo n = new Nodo(item);
-        if(posicao==0) { //insere no inicio
-            n.proximo = inicio.proximo;
-            n.anterior = inicio;
-            inicio.proximo.anterior = n;
-            inicio.proximo = n;
+
+        Nodo aux = inicio.proximo;
+        for (int p = 0; p < posicao; p++) {
+            aux = aux.proximo;
         }
-        else if (posicao == tamanho) { //insere no final
-            n.proximo = fim;
-            n.anterior = fim.anterior;
-            fim.anterior.proximo = n;
-            fim.anterior = n;
-        }
-        else {
-            Nodo aux = inicio.proximo;
-            for (int p = 0; p < posicao; p++) {
-                aux = aux.proximo;
-            }
-            //aux referencia o nodo na posicao em que queremos adicionar
-            n.proximo = aux;
-            n.anterior = aux.anterior;
-            aux.anterior.proximo = n;
-            aux.anterior = n;
-        }
+        //aux referencia o nodo na posicao em que queremos adicionar
+        n.proximo = aux;
+        n.anterior = aux.anterior;
+        aux.anterior.proximo = n;
+        aux.anterior = n;
 
         tamanho++;
     }
