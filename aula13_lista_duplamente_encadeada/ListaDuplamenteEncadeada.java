@@ -24,6 +24,38 @@ public class ListaDuplamenteEncadeada {
 
         tamanho = 0;
     }
+
+    public void imprimir() {
+        for(Nodo aux = inicio.proximo; aux.proximo!=null; aux = aux.proximo) {
+            System.out.println(aux.item);
+        }
+    }
+
+    public void adicionar(String item) {
+        //por default adiciona no FINAL da lista
+        Nodo n = new Nodo(item);
+
+        n.anterior = inicio;
+        n.proximo = inicio.proximo;
+
+        //Nodo primeiroDaLista = inicio.proximo;
+        //primeiroDaLista.anterior = n;
+        inicio.proximo.anterior = n;
+        inicio.proximo = n;
+
+        tamanho++;
+
+    }
+
+
+
+
+
+
+
+
+
+
     public void adicionar(int posicao, String item) {
         if(posicao < 0 || posicao > tamanho) {
             throw new IndexOutOfBoundsException("Posição inválida");
@@ -44,10 +76,7 @@ public class ListaDuplamenteEncadeada {
         tamanho++;
     }
 
-    public void adicionar(String item) {
-        //por default adiciona no final da lista
-        //IMPLEMENTAR
-    }
+
 
     public void limpar() {
         inicio.proximo = fim;
