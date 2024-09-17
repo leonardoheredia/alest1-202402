@@ -25,12 +25,6 @@ public class ListaDuplamenteEncadeada {
         tamanho = 0;
     }
 
-    public void imprimir() {
-        for(Nodo aux = inicio.proximo; aux.proximo!=null; aux = aux.proximo) {
-            System.out.println(aux.item);
-        }
-    }
-
     public void adicionar(String item) {
         //por default adiciona no FINAL da lista
         Nodo n = new Nodo(item);
