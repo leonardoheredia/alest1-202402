@@ -4,7 +4,9 @@ public class App {
     public static void main(String[] args) {
         ListaDuplamenteEncadeada times = new ListaDuplamenteEncadeada();
         times.adicionar("inter");
-        times.imprimir();
+        times.adicionar("gremio");
+        times.adicionar("juventude");
+        System.out.println(times);
 
 
     }

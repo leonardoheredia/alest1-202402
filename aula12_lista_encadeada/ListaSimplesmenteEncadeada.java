@@ -111,6 +111,7 @@ public class ListaSimplesmenteEncadeada {
         }
         tamanho++;
     }
+
     public void limpar() {
         //limpa a lista
         tamanho = 0;

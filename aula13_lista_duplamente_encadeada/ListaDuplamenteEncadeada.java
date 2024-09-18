@@ -29,22 +29,15 @@ public class ListaDuplamenteEncadeada {
         //por default adiciona no FINAL da lista
         Nodo n = new Nodo(item);
 
-        n.anterior = inicio;
-        n.proximo = inicio.proximo;
+        n.proximo = fim;
+        n.anterior = fim.anterior;
 
-        //Nodo primeiroDaLista = inicio.proximo;
-        //primeiroDaLista.anterior = n;
-        inicio.proximo.anterior = n;
-        inicio.proximo = n;
+        fim.anterior.proximo = n;
+        fim.anterior = n;
 
         tamanho++;
 
     }
-
-
-
-
-
 
 
 
