@@ -21,16 +21,25 @@ public class PilhaEncadeada {
         topo = n;
         quantidade++;
     }
-    public void imprimir() {
-        //percorrer toda a pilha imprimindo cada elemento
-        //inicializar uma variavel aux do tipo Nodo com valor inicial igual
-        //ao topo
-        //enquanto aux for diferente de null imprimir o aux.item
-
+    public String desempilhar() {
+        //retorna o item que esta no topo da pilha
+        //faz o topo receber o proximo
+        if(topo==null) return null;
+        String item = topo.item;
+        topo = topo.proximo;
+        quantidade--;
+        return item;
     }
-
-
-
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Nodo aux = topo;
+        if(aux==null) sb.append("Pilha está vazia.");
+        while (aux!=null) {
+            sb.append(aux.item).append(System.lineSeparator());
+            aux = aux.proximo;
+        }
+        return sb.toString();
+    }
 
 }
