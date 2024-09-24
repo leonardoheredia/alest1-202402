@@ -21,14 +21,27 @@ public class PilhaEncadeada {
         topo = n;
         quantidade++;
     }
-    public String desempilhar() {
+    public void desempilhar() {
         //retorna o item que esta no topo da pilha
         //faz o topo receber o proximo
-        if(topo==null) return null;
+        if(estaVazia()) return;
         String item = topo.item;
         topo = topo.proximo;
         quantidade--;
-        return item;
+    }
+    public int getQuantidade() {
+        return quantidade;
+    }
+    public boolean estaVazia() {
+        return quantidade==0;
+    }
+    public String getTopo() {
+        if(estaVazia()) return null;
+        return topo.item;
+    }
+    public void limpar() {
+        topo = null;
+        quantidade = 0;
     }
     @Override
     public String toString() {

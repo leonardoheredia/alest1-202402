@@ -9,8 +9,7 @@ public class AppPilhaEncadeada {
         pilha.empilhar("1822");
         pilha.empilhar("gaia");
         System.out.println(pilha);
-        String item = pilha.desempilhar();
-        System.out.println("Removeu o " + item + " da pilha");
+        pilha.desempilhar();
         System.out.println(pilha);
         pilha.desempilhar();
         System.out.println(pilha);
