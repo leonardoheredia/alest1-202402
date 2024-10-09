@@ -20,7 +20,6 @@ public class ListaSimplesmenteEncadeada {
     }
 
     public void adicionar(String item) {
-        //por default adiciona no final da lista
         Nodo n = new Nodo(item);
         if(tamanho ==0) {
             inicio = n;

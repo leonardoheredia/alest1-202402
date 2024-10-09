@@ -14,52 +14,36 @@ public class ListaDuplamenteEncadeada {
     private int tamanho;
     private Nodo inicio;
     private Nodo fim;
-
     public ListaDuplamenteEncadeada() {
         //cria inicio e fim como sentinelas
         inicio = new Nodo(null);
         fim = new Nodo(null);
         inicio.proximo = fim;
         fim.anterior = inicio;
-
         tamanho = 0;
     }
-
     public void adicionar(String item) {
-        //por default adiciona no FINAL da lista
         Nodo n = new Nodo(item);
-
         n.proximo = fim;
         n.anterior = fim.anterior;
-
         fim.anterior.proximo = n;
         fim.anterior = n;
-
         tamanho++;
-
     }
-
-
-
-
 
     public void adicionar(int posicao, String item) {
         if(posicao < 0 || posicao > tamanho) {
             throw new IndexOutOfBoundsException("Posição inválida");
         }
-
         Nodo n = new Nodo(item);
-
         Nodo aux = inicio.proximo;
         for (int p = 0; p < posicao; p++) {
             aux = aux.proximo;
         }
-        //aux referencia o nodo na posicao em que queremos adicionar
         n.proximo = aux;
         n.anterior = aux.anterior;
         aux.anterior.proximo = n;
         aux.anterior = n;
-
         tamanho++;
     }
 

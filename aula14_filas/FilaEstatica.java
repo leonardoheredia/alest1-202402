@@ -16,8 +16,6 @@ public class FilaEstatica {
     }
 
     public void enfileirar(String item) {
-        //insere SEMPRE no final da fila
-        //final da fila sera fim+1;
         int posicao = fim + 1;
         itens[posicao] = item;
         fim = posicao;
@@ -36,6 +34,18 @@ public class FilaEstatica {
         inicio++;
         tamanho--;
         return r;
+    }
+    public void questaoProva() {
+        FilaEstatica fe = new FilaEstatica();
+        fe.enfileirar("azul");
+        fe.enfileirar("vermelho");
+        fe.enfileirar("verde");
+        String s = "{";
+        for (int i = fe.inicio; i <= fe.fim; i++) {
+            s = s + fe.itens[i];
+            if(i<fe.fim) s = s + ",";
+        }
+        s = s + "}";
     }
 
     public String imprimirArray() {

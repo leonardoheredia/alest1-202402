@@ -15,20 +15,18 @@ public class PilhaEncadeada {
         topo = null;
         quantidade = 0;
     }
+    public void desempilhar() {
+        if(estaVazia()) return;
+        topo = topo.proximo;
+        quantidade--;
+    }
     public void empilhar(String item) {
         Nodo n = new Nodo(item);
         n.proximo = topo;
         topo = n;
         quantidade++;
     }
-    public void desempilhar() {
-        //retorna o item que esta no topo da pilha
-        //faz o topo receber o proximo
-        if(estaVazia()) return;
-        String item = topo.item;
-        topo = topo.proximo;
-        quantidade--;
-    }
+
     public int getQuantidade() {
         return quantidade;
     }
