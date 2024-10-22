@@ -26,13 +26,22 @@ public class ArvoreBinariaPesquisa {
             if(pai.direita==null) pai.direita = n;
             else adicionarRecursivo(n, pai.direita);
         }
-        else {
+        else { //descer para a ESQUERDA
             if(pai.esquerda==null) pai.esquerda = n;
             else adicionarRecursivo(n, pai.esquerda);
         }
     }
 
-    /*
+    public void percorrerEmProfundidade() {
+        percorrerEmProfundidade(raiz);
+    }
+    private void percorrerEmProfundidade(Nodo n) {
+        if(n==null) return;
+        if(n.esquerda!=null) percorrerEmProfundidade(n.esquerda);
+        System.out.println(n.chave);
+        if(n.direita!=null) percorrerEmProfundidade(n.direita);
+    }
+
     public void imprimirArvore() {
         imprimirArvoreRecusivamente(this.raiz, 0);
     }
@@ -47,5 +56,5 @@ public class ArvoreBinariaPesquisa {
         imprimirArvoreRecusivamente(raiz.esquerda, nivel);
     }
 
-     */
+
 }
