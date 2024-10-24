@@ -42,6 +42,54 @@ public class ArvoreBinariaPesquisa {
         if(n.direita!=null) percorrerEmProfundidade(n.direita);
     }
 
+    public void limpar() {
+        //LIMPA A ARVORE
+    }
+    public boolean estaVazia() {
+        //VERIFICA SE A ARVORE ESTA VAZIA
+        return false;
+    }
+    public int obterRaiz() {
+        //IMPLEMENTAR
+        return  -1;
+    }
+    public int obterPai(int chave) {
+        //RETORNA O VALOR DA CHAVE DO PAI DA CHAVE INFORMADA
+        return -1;
+    }
+    public String preOrdem() {
+        //retorna uma lista do caminho em preOrdem
+        return null;
+    }
+    public String posOrdem() {
+        //retorna uma lista do caminho em posOrdem
+        return null;
+    }
+    public String ordemCentral() {
+        //retorna uma lista do caminho em ordem central
+        return null;
+    }
+
+    public int obterAltura() {
+        return -1;
+    }
+    public int ehInterno(int chave) {
+        return -1;
+    }
+    public int ehFolha(int chave) {
+        return -1;
+    }
+
+
+
+
+
+
+
+
+
+
+
     public void imprimirArvore() {
         imprimirArvoreRecusivamente(this.raiz, 0);
     }
