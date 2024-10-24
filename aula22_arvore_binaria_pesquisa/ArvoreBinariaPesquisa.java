@@ -11,7 +11,9 @@ public class ArvoreBinariaPesquisa {
     }
     private Nodo raiz;
 
-    public ArvoreBinariaPesquisa() {};
+    public ArvoreBinariaPesquisa() {
+        raiz = null;
+    };
     public void adicionar(int chave) {
         Nodo n = new Nodo(chave);
         if(raiz==null) {
@@ -43,7 +45,7 @@ public class ArvoreBinariaPesquisa {
     }
 
     public void limpar() {
-        //LIMPA A ARVORE
+        raiz = null;
     }
     public boolean estaVazia() {
         //VERIFICA SE A ARVORE ESTA VAZIA
@@ -82,6 +84,10 @@ public class ArvoreBinariaPesquisa {
     public int obterTamanho() {
         //retorna o tamanho da arvore
         return -1;
+    }
+    public boolean existe(int chave) {
+        //verifica se uma chave existe na arvore
+        return false;
     }
 
 
