@@ -10,9 +10,13 @@ public class ArvoreBinariaPesquisa {
         }
     }
     private Nodo raiz;
+    private String preOrdem;
+    private String posOrdem;
+    private String ordemCentral;
 
     public ArvoreBinariaPesquisa() {
         raiz = null;
+        preOrdem = "";
     };
     public void adicionar(int chave) {
         Nodo n = new Nodo(chave);
@@ -39,29 +43,14 @@ public class ArvoreBinariaPesquisa {
     }
     private void percorrerEmProfundidade(Nodo n) {
         if(n==null) return;
+        this.preOrdem = this.preOrdem + " " + n.chave;
         if(n.esquerda!=null) percorrerEmProfundidade(n.esquerda);
-        System.out.println(n.chave);
         if(n.direita!=null) percorrerEmProfundidade(n.direita);
     }
 
-    public void limpar() {
-        raiz = null;
-    }
-    public boolean estaVazia() {
-        //VERIFICA SE A ARVORE ESTA VAZIA
-        return false;
-    }
-    public int obterRaiz() {
-        //IMPLEMENTAR
-        return  -1;
-    }
-    public int obterPai(int chave) {
-        //RETORNA O VALOR DA CHAVE DO PAI DA CHAVE INFORMADA
-        return -1;
-    }
     public String preOrdem() {
-        //retorna uma lista do caminho em preOrdem
-        return null;
+        percorrerEmProfundidade();
+        return this.preOrdem;
     }
     public String posOrdem() {
         //retorna uma lista do caminho em posOrdem
@@ -70,6 +59,20 @@ public class ArvoreBinariaPesquisa {
     public String ordemCentral() {
         //retorna uma lista do caminho em ordem central
         return null;
+    }
+    public void limpar() {
+        raiz = null;
+    }
+    public boolean estaVazia() {
+        return (raiz==null);
+    }
+    public int obterRaiz() {
+        if(!estaVazia()) return raiz.chave;
+        else return -1;
+    }
+    public int obterPai(int chave) {
+        //RETORNA O VALOR DA CHAVE DO PAI DA CHAVE INFORMADA
+        return -1;
     }
 
     public int obterAltura() {

@@ -12,6 +12,9 @@ public class App {
         abp.adicionar(600);
         abp.adicionar(750);
 
-        abp.percorrerEmProfundidade();
+        abp.imprimirArvore();
+        System.out.println("");
+        String caminhoPreOrdem = abp.preOrdem();
+        System.out.println(caminhoPreOrdem);
     }
 }
