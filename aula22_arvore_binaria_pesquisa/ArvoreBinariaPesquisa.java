@@ -79,6 +79,10 @@ public class ArvoreBinariaPesquisa {
     public int ehFolha(int chave) {
         return -1;
     }
+    public int obterTamanho() {
+        //retorna o tamanho da arvore
+        return -1;
+    }
 
 
 
