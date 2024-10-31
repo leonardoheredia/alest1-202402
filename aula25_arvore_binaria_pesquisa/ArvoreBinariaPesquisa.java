@@ -41,8 +41,18 @@ public class ArvoreBinariaPesquisa {
     public boolean remover(int chave) {
         //retorna TRUE se removeu ou FALSE se nao removeu (nao existia a chave)
         Nodo n = obterNodoRecursivo(chave, raiz);
-        System.out.println(n.chave);
-        return false;
+        if(n==null) return false;
+        if(numeroFilhos(n)==0) {
+            if(n.pai.esquerda==n) n.pai.esquerda = null;
+            else n.pai.direita = null;
+        }
+        return true;
+    }
+    private int numeroFilhos(Nodo n) {
+        if(n==null) return -1;
+        if(n.esquerda==null && n.direita==null) return 0;
+        if(n.esquerda!=null && n.direita!=null) return 2;
+        return 1;
     }
     private Nodo obterNodoRecursivo(int chave, Nodo n) {
         if(n==null) return null;

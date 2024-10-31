@@ -16,6 +16,10 @@ public class App {
         abp.adicionar(32);
         abp.imprimirArvore();
 
-        abp.remover(900);
+        abp.remover(93);
+
+        System.out.println("");
+        System.out.println("");
+        abp.imprimirArvore();
     }
 }
