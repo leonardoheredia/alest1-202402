@@ -15,5 +15,7 @@ public class App {
         abp.adicionar(25);
         abp.adicionar(32);
         abp.imprimirArvore();
+
+        abp.remover(900);
     }
 }
