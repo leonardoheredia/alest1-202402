@@ -14,12 +14,16 @@ public class App {
         abp.adicionar(30);
         abp.adicionar(25);
         abp.adicionar(32);
-        abp.imprimirArvore();
-
-        abp.remover(93);
-
         System.out.println("");
         System.out.println("");
         abp.imprimirArvore();
+
+        System.out.println("");
+        System.out.println("Raiz = " + abp.obterRaiz());
+        int c1 = 53;
+        System.out.println("Pai do " + c1 + " = " + abp.obterPai(53));
+
+        System.out.println("Tamanho = " + abp.obterTamanho());
+        System.out.println("Preordem = " + abp.percorrerPreOrdem());
     }
 }

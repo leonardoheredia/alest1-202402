@@ -61,7 +61,6 @@ public class ArvoreBinariaPesquisa {
         if(chave<n.chave) return obterNodoRecursivo(chave, n.esquerda);
         return null;
     }
-
     public void imprimirArvore() {
         imprimirArvoreRecusivamente(raiz, 0);
     }
@@ -75,26 +74,49 @@ public class ArvoreBinariaPesquisa {
         for (int i = 5; i < nivel; i++) System.out.print(" ");
         imprimirArvoreRecusivamente(raiz.esquerda, nivel);
     }
-
     public boolean estaVazia() {
         return raiz==null;
     }
 
+    private void percorrerRecursivamente(Nodo aux, String[] resultados) {
+        if(aux==null) return;
+        int tamanho = Integer.parseInt(resultados[0]);
+        tamanho++;
+        resultados[0] = String.valueOf(tamanho);
+        resultados[1] = resultados[1] + " " + aux.chave;
+        if(aux.esquerda!=null) percorrerRecursivamente(aux.esquerda, resultados);
+        if(aux.direita!=null) percorrerRecursivamente(aux.direita, resultados);
+    }
     //IMPLEMENTAR NA AULA DO DIA 04/11
-    public int tamanho() {
-        return 0;
+    public int obterTamanho() {
+        String[] resultados = new String[4];
+        resultados[0] = "0";
+        resultados[1] = "";
+        percorrerRecursivamente(raiz, resultados);
+        int tamanho = Integer.parseInt(resultados[0]);
+        return tamanho;
     }
     public void limpar() {
-
+        raiz = null;
     }
     public int obterRaiz() {
-        return 0;
+        if(!estaVazia()) return raiz.chave;
+        return -1;
     }
     public int obterPai(int chave) {
-        return 0;
+        if(estaVazia()) return -1;
+        if(chave==raiz.chave) return -1;
+        Nodo aux = obterNodoRecursivo(chave, raiz);
+        return aux.pai.chave;
     }
     public String percorrerPreOrdem() {
-        return null;
+        String[] resultados = new String[4];
+        resultados[0] = "0";
+        resultados[1] = "";
+        percorrerRecursivamente(raiz, resultados);
+        String caminho = resultados[1];
+        return caminho;
+
     }
     public String percorrerPosOrdem() {
         return null;
