@@ -76,8 +76,47 @@ public class ArvoreBinariaPesquisa {
         imprimirArvoreRecusivamente(raiz.esquerda, nivel);
     }
 
-
     public boolean estaVazia() {
         return raiz==null;
     }
+
+    //IMPLEMENTAR NA AULA DO DIA 04/11
+    public int tamanho() {
+        return 0;
+    }
+    public void limpar() {
+
+    }
+    public int obterRaiz() {
+        return 0;
+    }
+    public int obterPai(int chave) {
+        return 0;
+    }
+    public String percorrerPreOrdem() {
+        return null;
+    }
+    public String percorrerPosOrdem() {
+        return null;
+    }
+    public String percorrerCentral() {
+        return null;
+    }
+    public String percorrerLargura() {
+        return null;
+    }
+    public int obterNivel(int chave) {
+        return 0;
+    }
+    public int obterAltura(int chave) {
+        return 0;
+    }
+    public boolean ehInterno(int chave) {
+        return false;
+    }
+    public boolean ehExterno(int chave) {
+        return false;
+    }
+
+
 }
