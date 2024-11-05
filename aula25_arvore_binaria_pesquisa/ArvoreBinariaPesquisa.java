@@ -1,6 +1,15 @@
 package aula25_arvore_binaria_pesquisa;
 
 public class ArvoreBinariaPesquisa {
+    private class ResultadosBuscaProfundidade {
+        public int tamanho;
+        public String preordem;
+        public ResultadosBuscaProfundidade() {
+            tamanho = 0;
+            preordem = "";
+        }
+
+    }
     private class Nodo {
         private int chave;
         private Nodo esquerda;
@@ -78,23 +87,18 @@ public class ArvoreBinariaPesquisa {
         return raiz==null;
     }
 
-    private void percorrerRecursivamente(Nodo aux, String[] resultados) {
+    private void percorrerRecursivamente(Nodo aux, ResultadosBuscaProfundidade resultado) {
         if(aux==null) return;
-        int tamanho = Integer.parseInt(resultados[0]);
-        tamanho++;
-        resultados[0] = String.valueOf(tamanho);
-        resultados[1] = resultados[1] + " " + aux.chave;
-        if(aux.esquerda!=null) percorrerRecursivamente(aux.esquerda, resultados);
-        if(aux.direita!=null) percorrerRecursivamente(aux.direita, resultados);
+        resultado.tamanho++;
+        resultado.preordem = resultado.preordem + " " + aux.chave;
+        if(aux.esquerda!=null) percorrerRecursivamente(aux.esquerda, resultado);
+        if(aux.direita!=null) percorrerRecursivamente(aux.direita, resultado);
     }
     //IMPLEMENTAR NA AULA DO DIA 04/11
     public int obterTamanho() {
-        String[] resultados = new String[4];
-        resultados[0] = "0";
-        resultados[1] = "";
-        percorrerRecursivamente(raiz, resultados);
-        int tamanho = Integer.parseInt(resultados[0]);
-        return tamanho;
+        ResultadosBuscaProfundidade r = new ResultadosBuscaProfundidade();
+        percorrerRecursivamente(raiz, r);
+        return r.tamanho;
     }
     public void limpar() {
         raiz = null;
@@ -110,12 +114,9 @@ public class ArvoreBinariaPesquisa {
         return aux.pai.chave;
     }
     public String percorrerPreOrdem() {
-        String[] resultados = new String[4];
-        resultados[0] = "0";
-        resultados[1] = "";
-        percorrerRecursivamente(raiz, resultados);
-        String caminho = resultados[1];
-        return caminho;
+        ResultadosBuscaProfundidade r = new ResultadosBuscaProfundidade();
+        percorrerRecursivamente(raiz, r);
+        return r.preordem;
 
     }
     public String percorrerPosOrdem() {
