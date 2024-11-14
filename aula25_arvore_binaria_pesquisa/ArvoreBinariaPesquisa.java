@@ -147,7 +147,18 @@ public class ArvoreBinariaPesquisa {
     private int contarNodosRecursivo(Nodo n) {
         if(n==null) return 0;
         return 1 + contarNodosRecursivo(n.esquerda) + contarNodosRecursivo(n.direita);
-
+    }
+    public int maiorValor() {
+        int[] maior = new int[1];
+        maior[0] = Integer.MIN_VALUE;
+        maiorValorRecursivo(raiz, maior);
+        return maior[0];
+    }
+    private void maiorValorRecursivo(Nodo n, int[] maior) {
+        if(n==null) return;
+        if(n.chave>maior[0]) maior[0] = n.chave;
+        maiorValorRecursivo(n.esquerda, maior);
+        maiorValorRecursivo(n.direita, maior);
     }
 
     /*

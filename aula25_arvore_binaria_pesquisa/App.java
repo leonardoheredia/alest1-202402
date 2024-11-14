@@ -29,5 +29,6 @@ public class App {
         System.out.println(abp.obterAltura(93));
 
         System.out.println(abp.contarNodos());
+        System.out.println(abp.maiorValor());
     }
 }
