@@ -30,5 +30,6 @@ public class App {
 
         System.out.println(abp.contarNodos());
         System.out.println(abp.maiorValor());
+        System.out.println(abp.maiorValor_gpt());
     }
 }

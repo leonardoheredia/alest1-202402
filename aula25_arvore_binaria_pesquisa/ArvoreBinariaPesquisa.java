@@ -161,6 +161,18 @@ public class ArvoreBinariaPesquisa {
         maiorValorRecursivo(n.direita, maior);
     }
 
+    public int maiorValor_gpt() {
+        return maiorValorRecursivo_gpt(raiz);
+    }
+
+    private int maiorValorRecursivo_gpt(Nodo n) {
+        if (n == null) {
+            return Integer.MIN_VALUE;
+        }
+        int esquerdaMax = maiorValorRecursivo_gpt(n.esquerda);
+        int direitaMax = maiorValorRecursivo_gpt(n.direita);
+        return Math.max(n.chave, Math.max(esquerdaMax, direitaMax));
+    }
     /*
     3. Escreva um método que conta o número de nós não-folha (internos, galhos) de uma
        árvore binária
