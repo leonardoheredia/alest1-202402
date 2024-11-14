@@ -25,5 +25,9 @@ public class App {
 
         System.out.println("Tamanho = " + abp.obterTamanho());
         System.out.println("Preordem = " + abp.percorrerPreOrdem());
+
+        System.out.println(abp.obterAltura(93));
+
+        System.out.println(abp.contarNodos());
     }
 }

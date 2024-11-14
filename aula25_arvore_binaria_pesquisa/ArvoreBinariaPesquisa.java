@@ -141,5 +141,28 @@ public class ArvoreBinariaPesquisa {
         return false;
     }
 
+    public int contarNodos() {
+        return contarNodosRecursivo(raiz);
+    }
+    private int contarNodosRecursivo(Nodo n) {
+        if(n==null) return 0;
+        return 1 + contarNodosRecursivo(n.esquerda) + contarNodosRecursivo(n.direita);
+
+    }
+
+    /*
+    3. Escreva um método que conta o número de nós não-folha (internos, galhos) de uma
+       árvore binária
+     */
+
+
+    /*
+    *
+     4. Escreva um método que conta o número de nodos de uma árvore binária, que tem
+        apenas o filho da direita.
+    * */
+    public int contarFilhosDaDireita() {
+        return 0;
+    }
 
 }
